@@ -4,16 +4,18 @@
   
   require("../conexion.php");
   
-  $del = "DELETE FROM usuarios WHERE id_usuario=".$_GET['id'];
-  mysqli_query($conexion,$del) or die("no elimino");
+  echo $del = "DELETE FROM usuarios WHERE id_usuario=".$_GET['id'];
+  //mysqli_query($conexion,$del) or die("no elimino");
     
   
   class Result {}
 
   $response = new Result();
   $response->resultado = 'OK';
-  $response->mensaje = 'Usuario borrado';
+  $response->mensaje = 'articulo borrado';
+
+  //print_r($response);
 
   header('Content-Type: application/json');
-  echo json_encode($response);  
+  echo json_encode($response);    
 ?>
